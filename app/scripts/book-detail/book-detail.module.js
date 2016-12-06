@@ -1,3 +1,6 @@
 'use strict';
 
-angular.module('bookDetail', []);
+angular.module('bookDetail', [
+    'ngRoute',
+    'core.bookTools'
+]);

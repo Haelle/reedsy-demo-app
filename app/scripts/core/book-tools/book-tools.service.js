@@ -5,7 +5,7 @@ angular.module('core.bookTools').factory('BookTools', ['$http',
                 var all = response.data;
                 var categories = [];
                 angular.forEach(all, function (item) {
-                    categories.pushIfNotExist(item.genre.category, function(e){
+                    categories.pushIfNotExist(item.genre.category, function (e) {
                         return e == item.genre.category;
                     });
                 });
@@ -19,7 +19,7 @@ angular.module('core.bookTools').factory('BookTools', ['$http',
                 var all = response.data;
                 var categories = [];
                 angular.forEach(all, function (item) {
-                    categories.pushIfNotExist(item.genre.name, function(e){
+                    categories.pushIfNotExist(item.genre.name, function (e) {
                         return e == item.genre.name;
                     });
                 });
@@ -28,9 +28,23 @@ angular.module('core.bookTools').factory('BookTools', ['$http',
             });
         };
 
+        var getBook = function (bookId) {
+            return $http.get('books/book.json').then(function (response) {
+                var all = response.data;
+                var book = {};
+                angular.forEach(all, function (item) {
+                    if (item.id == bookId)
+                        book = item;
+                });
+                
+                return book;
+            });
+        };
+
         return {
             getCategories: getCategories,
-            getGenres: getGenres
+            getGenres: getGenres,
+            getBook: getBook
         }
     }
 ]);
