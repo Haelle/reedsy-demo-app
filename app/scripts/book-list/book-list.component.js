@@ -5,7 +5,10 @@ angular.module('bookList').component('bookList', {
     controller: ['$scope', 'Book', 'BookTools',
         function BookListController($scope, Book, BookTools) {
             this.now = new Date();
-            this.books = Book.query();
+            $scope.books = Book.query();
+            $scope.currentPage = 1;
+            $scope.pageSize = 20;
+
             $scope.categories = [];
             BookTools.getCategories().then(function(data){
                $scope.categories = data;

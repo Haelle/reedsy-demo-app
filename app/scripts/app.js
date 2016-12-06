@@ -4,6 +4,7 @@ angular.module('reedsyApp', [
     'ngAnimate',
     'ngRoute',
     'ngSanitize',
+    'angularUtils.directives.dirPagination',
     'core',
     'bookList',
     'bookDetail'

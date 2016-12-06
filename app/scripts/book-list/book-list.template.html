@@ -23,10 +23,20 @@
         </div>
     </div>
     <div class="row buffer-top">
+        <dir-pagination-controls
+                boundary-links="true"
+                on-page-change="pageChangeHandler(newPageNumber)"
+                template-url="bower_components/angularUtils-pagination/dirPagination.tpl.html">
+        </dir-pagination-controls>
+    </div>
+    <div class="row buffer-top">
         <ul class="book-list">
-            <li ng-repeat="book in $ctrl.books | filterBooks: userSearch
+            <li dir-paginate="book in books
+            | filterBooks: userSearch
             | filter: (!!bookCategory || undefined) && {genre:{category: bookCategory}} : true
-            | filter: (!!bookGenre || undefined) && {genre:{name: bookGenre}} : true"
+            | filter: (!!bookGenre || undefined) && {genre:{name: bookGenre}} : true
+            | itemsPerPage: pageSize"
+                current-page="currentPage"
                 class="thumbnail book-list-item col-xs-4">
                 <a href="#!books/{{book.id}}" class="thumb">
                     <img ng-src="{{book.cover}}" alt="{{book.name}}">
@@ -46,3 +56,4 @@
         </ul>
     </div>
 </div>
+

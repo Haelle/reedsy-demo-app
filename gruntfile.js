@@ -34,6 +34,7 @@ module.exports = function(grunt) {
                     './app/bower_components/angular-translate/angular-translate.js',
                     './app/bower_components/moment/moment.js',
                     './app/bower_components/angular-moment/angular-moment.js',
+                    './app/bower_components/angularUtils-pagination/dirPagination.js',
                     './app/scripts/app.annotated.js',
                     './app/scripts/config.annotated.js',
                     './app/**/*.module.annotated.js',

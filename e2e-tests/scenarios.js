@@ -19,7 +19,7 @@ describe('Reedsy Application', function () {
             var queryField = element(by.model('userSearch'));
             var genreSelect = element(by.model('bookGenre'));
             var cookbooksOption = genreSelect.element(by.css('option[value="Cookbooks"]'));
-            var bookNameColumn = element.all(by.repeater('book in $ctrl.books').column('book.name'));
+            var bookNameColumn = element.all(by.repeater('book in books').column('book.name'));
 
             function getNames(){
                 return bookNameColumn.map(function(elem) {

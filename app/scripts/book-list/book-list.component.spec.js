@@ -11,13 +11,16 @@ describe('bookList', function () {
     beforeEach(module('bookList'));
 
     describe('BookListController', function () {
-        var $httpBackend, ctrl;
+        var scope, $httpBackend, ctrl;
 
-        beforeEach(inject(function ($componentController, _$httpBackend_) {
+        beforeEach(inject(function ($componentController, _$httpBackend_, $rootScope) {
+            scope = $rootScope.$new();
             $httpBackend = _$httpBackend_;
-            // $httpBackend.expectGET('books/book.json').respond(booksData);
+            $httpBackend.expectGET('books/book.json').respond(booksData);
 
-            ctrl = $componentController('bookList');
+            ctrl = $componentController('bookList', {
+                $scope: scope
+            });
         }));
 
         // afterEach(function() {
@@ -27,9 +30,9 @@ describe('bookList', function () {
 
         it('should create 3 books', function () {
             jasmine.addCustomEqualityTester(angular.equals);
-            expect(ctrl.books).toEqual([]);
+            expect(scope.books).toEqual([]);
             // $httpBackend.flush();
-            // expect(ctrl.books).toEqual(booksData);
+            // expect(books).toEqual(booksData);
         });
 
         it('should be ok', function () {
