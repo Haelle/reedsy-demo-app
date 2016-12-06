@@ -1,3 +1,8 @@
 'use strict';
 
-angular.module('bookList', ['core.book', 'core.bookTools', 'pascalprecht.translate', 'angularMoment']);
+angular.module('bookList', [
+    'core.book',
+    'core.bookTools',
+    'pascalprecht.translate',
+    'angularMoment'
+]);

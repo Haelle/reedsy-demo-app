@@ -4,7 +4,7 @@
             <label>{{ 'filter.category' | translate }}
                 <select name="category"
                         ng-model="bookCategory"
-                        ng-options="option for option in categories">
+                        ng-options="option for option in categories track by option">
                     <option></option>
                 </select>
             </label>
@@ -13,7 +13,7 @@
             <label>{{ 'filter.genre' | translate }}
                 <select name="genre"
                         ng-model="bookGenre"
-                        ng-options="option for option in genres | orderBy">
+                        ng-options="option as option for option in genres | orderBy track by option">
                     <option></option>
                 </select>
             </label>
@@ -34,7 +34,6 @@
                 <a href="#!books/{{book.id}}">
                     <h4>{{book.name}}</h4>
                     <div>{{ 'by' | translate }}{{book.author.name}}</div>
-                    <div>{{book.genre.category}}</div>
                     <div>{{book.likes}}</div>
                     <span>
                         {{ 'ago-start' | translate }}
