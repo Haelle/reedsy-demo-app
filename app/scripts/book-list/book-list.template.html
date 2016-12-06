@@ -5,6 +5,7 @@
                 <select name="category"
                         ng-model="bookCategory"
                         ng-options="option for option in categories">
+                    <option></option>
                 </select>
             </label>
         </div>
@@ -12,7 +13,8 @@
             <label>{{ 'filter.genre' | translate }}
                 <select name="genre"
                         ng-model="bookGenre"
-                        ng-options="option for option in genres">
+                        ng-options="option for option in genres | orderBy">
+                    <option></option>
                 </select>
             </label>
         </div>
@@ -22,7 +24,9 @@
     </div>
     <div class="row buffer-top">
         <ul class="book-list">
-            <li ng-repeat="book in $ctrl.books | filterBooks: userSearch"
+            <li ng-repeat="book in $ctrl.books | filterBooks: userSearch
+            | filter: (!!bookCategory || undefined) && {genre:{category: bookCategory}} : true
+            | filter: (!!bookGenre || undefined) && {genre:{name: bookGenre}} : true"
                 class="thumbnail book-list-item col-xs-4">
                 <a href="#!books/{{book.id}}" class="thumb">
                     <img ng-src="{{book.cover}}" alt="{{book.name}}">
@@ -30,6 +34,7 @@
                 <a href="#!books/{{book.id}}">
                     <h4>{{book.name}}</h4>
                     <div>{{ 'by' | translate }}{{book.author.name}}</div>
+                    <div>{{book.genre.category}}</div>
                     <div>{{book.likes}}</div>
                     <span>
                         {{ 'ago-start' | translate }}

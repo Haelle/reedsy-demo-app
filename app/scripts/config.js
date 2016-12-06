@@ -17,7 +17,7 @@ angular.module('reedsyApp').config(['$locationProvider', '$routeProvider','$tran
             'ago-start': '',
             'ago-end': 'ago',
             'filter.category': 'Find me the best',
-            'filter.genre': 'book about'
+            'filter.genre': 'Book about'
         });
 
         $translateProvider.translations('fr', {
