@@ -1,2 +1,44 @@
-Book List
-<a href="#!/books/test">Go to detail</a>
+<div class="container-fluid">
+    <div class="row buffer-top">
+        <div class="col-xs-4">
+            <label>{{ 'filter.category' | translate }}
+                <select name="category"
+                        ng-model="bookCategory"
+                        ng-options="option for option in categories">
+                </select>
+            </label>
+        </div>
+        <div class="col-xs-4">
+            <label>{{ 'filter.genre' | translate }}
+                <select name="genre"
+                        ng-model="bookGenre"
+                        ng-options="option for option in genres">
+                </select>
+            </label>
+        </div>
+        <div class="col-xs-4">
+            <input ng-model="userSearch" />
+        </div>
+    </div>
+    <div class="row buffer-top">
+        <ul class="book-list">
+            <li ng-repeat="book in $ctrl.books | filterBooks: userSearch"
+                class="thumbnail book-list-item col-xs-4">
+                <a href="#!books/{{book.id}}" class="thumb">
+                    <img ng-src="{{book.cover}}" alt="{{book.name}}">
+                </a>
+                <a href="#!books/{{book.id}}">
+                    <h4>{{book.name}}</h4>
+                    <div>{{ 'by' | translate }}{{book.author.name}}</div>
+                    <div>{{book.likes}}</div>
+                    <span>
+                        {{ 'ago-start' | translate }}
+                        {{$ctrl.now | amDifference : book.published : 'months' }}
+                        {{'months' | translate }}
+                        {{'ago-end' | translate }}
+                    </span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
