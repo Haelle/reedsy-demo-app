@@ -10,7 +10,7 @@ angular.module('core.bookTools').factory('BookTools', ['$http',
                         return e == item.genre.category;
                     });
                 });
-
+                
                 return categories;
             });
         };
