@@ -8,4 +8,12 @@
 .buffer-top {
   margin-top: 15px; }
 
+.author-footer {
+  text-align: center; }
+
+.helper {
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%; }
+
 /*# sourceMappingURL=app.css.map */

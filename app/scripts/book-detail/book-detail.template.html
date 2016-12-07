@@ -1,3 +1,28 @@
 <div class="row">
-    <a href="#!/books">Back to list</a>
+
+    <a class="col-xs-4" href="#!/books"><h4>{{'detail.back'|translate}}</h4></a>
+</div>
+<div class="row">
+    <div class="col-xs-5">
+        <img ng-src="{{book.cover}}" alt="{{book.name}}" class="img-responsive">
+    </div>
+    <div class="col-xs-7">
+        <h3 class="row">{{book.name}}</h3>
+        <small class="row">{{'by'|translate}}{{book.author.name}}</small>
+        <p>{{book.description}}</p>
+        <p>{{'detail.categories'|translate}}</p>
+        <p>{{book.genre.category}},{{book.genre.name}}</p>
+    </div>
+</div>
+<div class="row">
+    <h4>{{'detail.introduction'|translate}}</h4>
+    <p ng-repeat="content in book.introduction">{{content.content}}</p>
+</div>
+<div class="row">
+    <hr class="divider col-xs-offset-4 col-xs-4">
+</div>
+<div class="row buffer-top author-footer">
+    <div class="helper"></div>
+    <img class="" ng-src="{{book.author.avatar}}" alt="{{book.author.name}}">
+    <p>{{'by'|translate}}{{book.author.name}}</p>
 </div>

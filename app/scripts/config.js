@@ -15,7 +15,10 @@ angular.module('reedsyApp').config(['$locationProvider', '$routeProvider','$tran
             'ago-start': '',
             'ago-end': 'ago',
             'filter.category': 'Find me the best',
-            'filter.genre': 'Book about'
+            'filter.genre': 'Book about',
+            'detail.back': 'Back to list',
+            'detail.categories': 'Categories',
+            'detail.introduction': 'Introduction'
         });
 
         $translateProvider.translations('fr', {
@@ -25,7 +28,10 @@ angular.module('reedsyApp').config(['$locationProvider', '$routeProvider','$tran
             'ago-start': 'Il y a ',
             'ago-end': '',
             'filter.category': 'Trouve moi le meilleurs',
-            'filter.genre': 'livre de'
+            'filter.genre': 'livre de',
+            'detail.back': 'Retour à la liste',
+            'detail.categories': 'Catégories',
+            'detail.introduction': 'Introduction'
         });
 
         $translateProvider.preferredLanguage('en');
