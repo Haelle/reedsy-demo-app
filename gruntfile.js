@@ -64,7 +64,8 @@ module.exports = function(grunt) {
             target: {
                 files: {
                     'app/app.min.css': [
-                        'app/bower_components/bootstrap/dist/css/bootstrap.css', 
+                        'app/bower_components/bootstrap/dist/css/bootstrap.css',
+                        'app/bower_components/components-font-awesome/css/font-awesome.css',
                         'app/styles/css/**/*.css', 
                         '!**/*.min.css'
                     ]

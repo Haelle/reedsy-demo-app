@@ -18,7 +18,8 @@ angular.module('reedsyApp').config(['$locationProvider', '$routeProvider','$tran
             'filter.genre': 'Book about',
             'detail.back': 'Back to list',
             'detail.categories': 'Categories',
-            'detail.introduction': 'Introduction'
+            'detail.introduction': 'Introduction',
+            'search.placeholder': 'search a book'
         });
 
         $translateProvider.translations('fr', {
@@ -31,7 +32,8 @@ angular.module('reedsyApp').config(['$locationProvider', '$routeProvider','$tran
             'filter.genre': 'livre de',
             'detail.back': 'Retour à la liste',
             'detail.categories': 'Catégories',
-            'detail.introduction': 'Introduction'
+            'detail.introduction': 'Introduction',
+            'search.placeholder': 'trouver un livre'
         });
 
         $translateProvider.preferredLanguage('en');

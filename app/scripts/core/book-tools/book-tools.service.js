@@ -86,7 +86,6 @@ angular.module('core.bookTools').factory('BookTools', ['$http',
                     }
                 }
 
-                console.log(selectedBooks);
                 return selectedBooks;
             });
         };

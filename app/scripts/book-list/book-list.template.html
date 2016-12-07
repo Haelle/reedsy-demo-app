@@ -1,32 +1,55 @@
 <div class="container-fluid">
-    <div class="row buffer-top">
-        <div class="col-xs-4">
-            <label>{{ 'filter.category' | translate }}
-                <select name="category"
+    <div class="row buffer-top form-horizontal">
+        <div class="form-group col-xs-12 col-sm-4">
+            <label class="control-label col-md-6" for="category">{{ 'filter.category' | translate }}</label>
+            <div class="col-md-6">
+                <select id="category"
+                        class="select form-control"
+                        name="category"
                         ng-model="bookCategory"
                         ng-options="option for option in categories track by option">
                     <option></option>
                 </select>
-            </label>
+            </div>
+
         </div>
-        <div class="col-xs-4">
-            <label>{{ 'filter.genre' | translate }}
-                <select name="genre"
+        <div class="form-group col-xs-12 col-sm-4">
+            <label class="control-label col-md-4" for="genre">{{ 'filter.genre' | translate }}</label>
+            <div class="col-md-8">
+                <select id="genre"
+                        name="genre"
+                        class="select form-control col-sm-10"
                         ng-model="bookGenre"
                         ng-options="option as option for option in genres | orderBy track by option">
                     <option></option>
                 </select>
-            </label>
+            </div>
         </div>
-        <div class="col-xs-4">
-            <input ng-model="userSearch"/>
+        <div class="form-group col-xs-12 col-sm-4">
+            <label class="control-label col-xs-0 col-sm-4 hidden-md hidden-lg" for="userSearch">&nbsp;</label>
+            <div class="col-xs-12">
+                <div class="input-group">
+                    <input
+                            id="userSearch"
+                            class="form-control"
+                            ng-model="userSearch"
+                            name="userSearch"
+                            type="text"
+                            placeholder="{{'search.placeholder'|translate}}"/>
+                    <div class="input-group-addon">
+                        <i class="fa fa-search">
+                        </i>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <div class="row buffer-top">
         <dir-pagination-controls
+                class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-4 col-md-4"
                 boundary-links="true"
                 on-page-change="pageChangeHandler(newPageNumber)"
-                template-url="bower_components/angularUtils-pagination/dirPagination.tpl.html">
+                template-url="scripts/book-list/pagination.template.html">
         </dir-pagination-controls>
     </div>
     <div class="row buffer-top">
