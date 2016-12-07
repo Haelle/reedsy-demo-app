@@ -2,7 +2,7 @@
     <h3>{{'similarreadings.title'|translate}}</h3>
     <span>{{'similarreadings.content'|translate}}</span>
 </div>
-<div class="row text-center">
+<div class="row text-center buffer-bottom">
     {{now}}
     <book-preview book="book" now="now" ng-repeat="book in selectedBooks"></book-preview>
 </div>

@@ -10,6 +10,8 @@ angular.module('reedsyApp').config(['$locationProvider', '$routeProvider','$tran
 
         $translateProvider.translations('en', {
             'by': 'By ',
+            'published': 'Published date: ',
+            'likes': 'Likes: ',
             'filter.category': 'Find me the best',
             'filter.genre': 'Book about',
             'detail.back': 'Back to list',
@@ -23,6 +25,8 @@ angular.module('reedsyApp').config(['$locationProvider', '$routeProvider','$tran
 
         $translateProvider.translations('fr', {
             'by': 'Par ',
+            'published': 'Publié le: ',
+            'likes': 'Likes: ',
             'filter.category': 'Trouve moi le meilleurs',
             'filter.genre': 'livre de',
             'detail.back': 'Retour à la liste',
