@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <div class="row buffer-top form-horizontal">
-        <div class="form-group col-xs-12 col-sm-4">
+        <div class="form-group col-xs-12 col-sm-6 col-md-4">
             <label class="control-label col-md-6" for="category">{{ 'filter.category' | translate }}</label>
             <div class="col-md-6">
                 <select id="category"
@@ -13,9 +13,9 @@
             </div>
 
         </div>
-        <div class="form-group col-xs-12 col-sm-4">
-            <label class="control-label col-md-4" for="genre">{{ 'filter.genre' | translate }}</label>
-            <div class="col-md-8">
+        <div class="form-group col-xs-12 col-sm-6 col-md-4">
+            <label class="control-label col-md-5" for="genre">{{ 'filter.genre' | translate }}</label>
+            <div class="col-md-7">
                 <select id="genre"
                         name="genre"
                         class="select form-control col-sm-10"
@@ -25,7 +25,8 @@
                 </select>
             </div>
         </div>
-        <div class="form-group col-xs-12 col-sm-4">
+        <div class="hidden-xs col-sm-3 hidden-md hidden-lg"></div>
+        <div class="form-group col-xs-12 col-sm-offset-3 col-sm-6 col-md-4">
             <label class="control-label col-xs-0 col-sm-4 hidden-md hidden-lg" for="userSearch">&nbsp;</label>
             <div class="col-xs-12">
                 <div class="input-group">
@@ -46,7 +47,7 @@
     </div>
     <div class="row buffer-top">
         <dir-pagination-controls
-                class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-4 col-md-4"
+                class="text-center col-xs-12 col-sm-offset-1 col-sm-10 col-lg-offset-2 col-lg-8"
                 boundary-links="true"
                 on-page-change="pageChangeHandler(newPageNumber)"
                 template-url="scripts/book-list/pagination.template.html">
@@ -54,8 +55,8 @@
     </div>
     <div class="row buffer-top">
         <book-preview
-                class="thumbnail book-list-item col-xs-4"
                 book="book"
+                now="now"
                 dir-paginate="book in books
                 | filterBooks: userSearch
                 | filter: (!!bookCategory || undefined) && {genre:{category: bookCategory}} : true

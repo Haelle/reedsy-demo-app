@@ -1,3 +1,8 @@
-<div class="row">
-    <book-preview class="col-xs-4" book="book" ng-repeat="book in selectedBooks"></book-preview>
+<div class="row text-center">
+    <h3>{{'similarreadings.title'|translate}}</h3>
+    <span>{{'similarreadings.content'|translate}}</span>
+</div>
+<div class="row text-center">
+    {{now}}
+    <book-preview book="book" now="now" ng-repeat="book in selectedBooks"></book-preview>
 </div>

@@ -1,14 +1,23 @@
-<a href="#!books/{{$ctrl.book.id}}" class="thumb">
-    <img ng-src="{{$ctrl.book.cover}}" alt="{{$ctrl.book.name}}" class="img-responsive">
-</a>
-<a href="#!books/{{$ctrl.book.id}}">
-    <h4>{{$ctrl.book.name}}</h4>
-    <div>{{ 'by' | translate }}{{$ctrl.book.author.name}}</div>
-    <div>{{$ctrl.book.likes}}</div>
-    <span>
-        {{ 'ago-start' | translate }}
-        {{now | amDifference : $ctrl.book.published : 'months' }}
-        {{'months' | translate }}
-        {{'ago-end' | translate }}
-    </span>
-</a>
+<div class="col-xs-12 col-sm-6 col-md-4 buffer-top book-thumb">
+    <div class="thumbnail">
+        <a href="#!books/{{$ctrl.book.id}}" class="col-xs-4 col-sm-12">
+            <img ng-src="{{$ctrl.book.cover}}" alt="{{$ctrl.book.name}}" class="img-responsive">
+        </a>
+        <div class="caption col-xs-8 col-sm-12">
+            <a href="#!books/{{$ctrl.book.id}}">
+                <h4>{{$ctrl.book.name}}</h4>
+            </a>
+            <div>{{ 'by' | translate }}{{$ctrl.book.author.name}}</div>
+            <div class="book-likes">
+                <span class="glyphicon glyphicon-heart"></span>
+                {{$ctrl.book.likes}}
+            </div>
+            <span class="book-published-date">
+                {{ 'ago-start' | translate }}
+                {{ $ctrl.now | amDifference : $ctrl.book.published : 'months' }}
+                {{'months' | translate }}
+                {{'ago-end' | translate }}
+            </span>
+        </div>
+    </div>
+</div>

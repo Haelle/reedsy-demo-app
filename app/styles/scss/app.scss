@@ -1,16 +1,8 @@
-.thumb {
-  float: left;
-  height: 100px;
-  margin: -0.5em 1em 1.5em 0;
-  padding-bottom: 1em;
-  width: 100px;
-}
-
 .buffer-top {
   margin-top: 15px;
 }
 
-.author-footer {
+.text-center {
   text-align: center;
 }
 
@@ -19,4 +11,42 @@
   display: inline-block;
   vertical-align: middle;
   height: 100%;
+}
+
+.pagination > li {
+  line-height: 40px;
+  &> a {
+    float: none !important;
+    margin-left: 0;
+  }
+}
+
+.book-thumb {
+  img {
+    height: 100px;
+  }
+}
+
+.thumbnail {
+  border: none !important;
+}
+
+.book-likes {
+  float: left;
+}
+
+.book-published-date {
+  float: right;
+}
+
+.back-link {
+  font-size: x-large;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.img-circle {
+  border-radius: 50%;
 }

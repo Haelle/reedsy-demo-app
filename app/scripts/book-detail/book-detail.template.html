@@ -1,12 +1,16 @@
-<div class="row">
-
-    <a class="col-xs-4" href="#!/books"><h4>{{'detail.back'|translate}}</h4></a>
+<div class="row buffer-top">
+    <a class="col-xs-4 back-link" href="#!/books">
+        <div>
+            <span class="glyphicon glyphicon-arrow-left"></span>
+            {{'detail.back'|translate}}
+        </div>
+    </a>
 </div>
-<div class="row">
-    <div class="col-xs-5">
-        <img ng-src="{{book.cover}}" alt="{{book.name}}" class="img-responsive">
+<div class="row buffer-top">
+    <div class="col-xs-3 col-sm-5">
+        <img ng-src="{{book.cover}}" alt="{{book.name}}" class="img-responsive thumbnail">
     </div>
-    <div class="col-xs-7">
+    <div class="col-xs-9 col-sm-7">
         <h3 class="row">{{book.name}}</h3>
         <small class="row">{{'by'|translate}}{{book.author.name}}</small>
         <p>{{book.description}}</p>
@@ -15,14 +19,17 @@
     </div>
 </div>
 <div class="row">
-    <h4>{{'detail.introduction'|translate}}</h4>
-    <p ng-repeat="content in book.introduction">{{content.content}}</p>
+    <h3>{{'detail.introduction'|translate}}</h3>
+    <p class="text-justify" ng-repeat="content in book.introduction">{{content.content}}</p>
 </div>
 <div class="row">
     <hr class="divider col-xs-offset-4 col-xs-4">
 </div>
-<div class="row buffer-top author-footer">
+<div class="row buffer-top text-center">
     <div class="helper"></div>
-    <img class="" ng-src="{{book.author.avatar}}" alt="{{book.author.name}}">
-    <p>{{'by'|translate}}{{book.author.name}}</p>
+    <img class="img-circle" ng-src="{{book.author.avatar}}" alt="{{book.author.name}}">
+    <p class="buffer-top">{{'writtenby'|translate}}{{book.author.name}}</p>
+</div>
+<div class="row">
+    <hr class="divider col-xs-offset-4 col-xs-4">
 </div>

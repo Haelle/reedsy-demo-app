@@ -19,7 +19,10 @@ angular.module('reedsyApp').config(['$locationProvider', '$routeProvider','$tran
             'detail.back': 'Back to list',
             'detail.categories': 'Categories',
             'detail.introduction': 'Introduction',
-            'search.placeholder': 'search a book'
+            'search.placeholder': 'search a book',
+            'writtenby': 'Written by ',
+            'similarreadings.title': 'Similar readings',
+            'similarreadings.content': "If you'd liked this book, we recommend you check out these emerging titles"
         });
 
         $translateProvider.translations('fr', {
@@ -33,7 +36,10 @@ angular.module('reedsyApp').config(['$locationProvider', '$routeProvider','$tran
             'detail.back': 'Retour à la liste',
             'detail.categories': 'Catégories',
             'detail.introduction': 'Introduction',
-            'search.placeholder': 'trouver un livre'
+            'search.placeholder': 'trouver un livre',
+            'writtenby': 'Ecrit par ',
+            'similarreadings.title': 'Lectures similaires',
+            'similarreadings.content': 'Si vous avez aimez ce livre, nous vous recommandons de regarder ces titres'
         });
 
         $translateProvider.preferredLanguage('en');

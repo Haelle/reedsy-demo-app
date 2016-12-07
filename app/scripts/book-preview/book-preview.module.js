@@ -1,1 +1,1 @@
-angular.module('bookPreview', []);
+angular.module('bookPreview', ['angularMoment']);
