@@ -7,5 +7,6 @@ angular.module('reedsyApp', [
     'angularUtils.directives.dirPagination',
     'core',
     'bookList',
-    'bookDetail'
+    'bookDetail',
+    'bookPreview'
 ]);

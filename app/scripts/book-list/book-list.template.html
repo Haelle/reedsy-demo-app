@@ -19,7 +19,7 @@
             </label>
         </div>
         <div class="col-xs-4">
-            <input ng-model="userSearch" />
+            <input ng-model="userSearch"/>
         </div>
     </div>
     <div class="row buffer-top">
@@ -30,30 +30,16 @@
         </dir-pagination-controls>
     </div>
     <div class="row buffer-top">
-        <ul class="book-list">
-            <li dir-paginate="book in books
-            | filterBooks: userSearch
-            | filter: (!!bookCategory || undefined) && {genre:{category: bookCategory}} : true
-            | filter: (!!bookGenre || undefined) && {genre:{name: bookGenre}} : true
-            | itemsPerPage: pageSize"
-                current-page="currentPage"
-                class="thumbnail book-list-item col-xs-4">
-                <a href="#!books/{{book.id}}" class="thumb">
-                    <img ng-src="{{book.cover}}" alt="{{book.name}}" class="img-responsive">
-                </a>
-                <a href="#!books/{{book.id}}">
-                    <h4>{{book.name}}</h4>
-                    <div>{{ 'by' | translate }}{{book.author.name}}</div>
-                    <div>{{book.likes}}</div>
-                    <span>
-                        {{ 'ago-start' | translate }}
-                        {{$ctrl.now | amDifference : book.published : 'months' }}
-                        {{'months' | translate }}
-                        {{'ago-end' | translate }}
-                    </span>
-                </a>
-            </li>
-        </ul>
+        <book-preview
+                class="thumbnail book-list-item col-xs-4"
+                book="book"
+                dir-paginate="book in books
+                | filterBooks: userSearch
+                | filter: (!!bookCategory || undefined) && {genre:{category: bookCategory}} : true
+                | filter: (!!bookGenre || undefined) && {genre:{name: bookGenre}} : true
+                | itemsPerPage: pageSize"
+                current-page="currentPage">
+        </book-preview>
     </div>
 </div>
 
