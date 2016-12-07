@@ -1,7 +1,7 @@
 <a href="#!books/{{$ctrl.book.id}}" class="thumb">
     <img ng-src="{{$ctrl.book.cover}}" alt="{{$ctrl.book.name}}" class="img-responsive">
 </a>
-<a href="#!books/{{book.id}}">
+<a href="#!books/{{$ctrl.book.id}}">
     <h4>{{$ctrl.book.name}}</h4>
     <div>{{ 'by' | translate }}{{$ctrl.book.author.name}}</div>
     <div>{{$ctrl.book.likes}}</div>

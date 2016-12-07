@@ -41,10 +41,17 @@ angular.module('core.bookTools').factory('BookTools', ['$http',
             });
         };
 
+        var getSelectedBooks = function(bookId){
+            return $http.get('books/book.json').then(function (response) {
+                return response.data.slice(0, 3);
+            });
+        };
+
         return {
             getCategories: getCategories,
             getGenres: getGenres,
-            getBook: getBook
+            getBook: getBook,
+            getSelectedBooks: getSelectedBooks
         }
     }
 ]);

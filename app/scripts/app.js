@@ -8,5 +8,6 @@ angular.module('reedsyApp', [
     'core',
     'bookList',
     'bookDetail',
-    'bookPreview'
+    'bookPreview',
+    'bookAdvices'
 ]);

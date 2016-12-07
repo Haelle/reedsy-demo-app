@@ -5,7 +5,7 @@ angular.module('reedsyApp').config(['$locationProvider', '$routeProvider','$tran
         $routeProvider.when('/books', {
             template: '<book-list></book-list>'
         }).when('/books/:bookId', {
-            template: '<book-detail></book-detail>'
+            template: '<book-detail></book-detail><book-advices></book-advices>'
         }).otherwise('/books');
 
         $translateProvider.translations('en', {
