@@ -1,5 +1,3 @@
-'use strict';
-
 angular.module('bookList').filter('filterBooks', function () {
     return function (books, searchValue) {
         var filtered = [];

@@ -12,8 +12,8 @@ module.exports = function(grunt) {
                         'app/**/*.js', 
                         '!**/*.spec.js', 
                         '!**/*.annotated.js',
-                        '!app/scripts/min/app.concat.js',
-                        '!app/scripts/min/app.min.js',
+                        '!app/app.concat.js',
+                        '!app/app.min.js',
                         '!**/bower_components/**/*.js',
                         '!**/node_modules/**/*.js'
                     ],
@@ -41,19 +41,19 @@ module.exports = function(grunt) {
                     './app/**/*.component.annotated.js',
                     './app/**/*.annotated.js'
                 ],
-                dest: './app/scripts/min/app.concat.js'
+                dest: './app/app.concat.js'
             },
             css: {
                 src: [
                     './app/styles/*.css'
                 ],
-                dest: './app/styles/min/app.concat.css'
+                dest: './app/app.concat.css'
             }
         },
         uglify: {
             js: {
-                src: './app/scripts/min/app.concat.js',
-                dest: './app/scripts/min/app.min.js'
+                src: './app/app.concat.js',
+                dest: './app/app.min.js'
             }
         },
         cssmin: {
@@ -63,7 +63,11 @@ module.exports = function(grunt) {
             },
             target: {
                 files: {
-                    'app/styles/min/app.min.css': ['app/styles/*.css', '!**/*.min.css']
+                    'app/app.min.css': [
+                        'app/bower_components/bootstrap/dist/css/bootstrap.css', 
+                        'app/styles/css/**/*.css', 
+                        '!**/*.min.css'
+                    ]
                 }
             }
         },
@@ -74,8 +78,8 @@ module.exports = function(grunt) {
                 },
                 command: [
                     "find -type f -name '*.annotated.js' -delete",
-                    'rm app/scripts/min/app.concat.js',
-                    'rm app/styles/min/app.concat.css'
+                    'rm app/app.concat.js',
+                    'rm app/app.concat.css'
                     ].join('&&')
             }
         }

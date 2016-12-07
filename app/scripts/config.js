@@ -1,5 +1,3 @@
-'use strict';
-
 angular.module('reedsyApp').config(['$locationProvider', '$routeProvider','$translateProvider',
     function config($locationProvider, $routeProvider, $translateProvider) {
         $locationProvider.hashPrefix('!');
