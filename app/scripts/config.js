@@ -9,6 +9,7 @@ angular.module('reedsyApp').config(['$locationProvider', '$routeProvider','$tran
         }).otherwise('/books');
 
         $translateProvider.translations('en', {
+            'all': 'All',
             'by': 'By ',
             'published': 'Published date: ',
             'likes': 'Likes: ',
@@ -24,6 +25,7 @@ angular.module('reedsyApp').config(['$locationProvider', '$routeProvider','$tran
         });
 
         $translateProvider.translations('fr', {
+            'all': 'All',
             'by': 'Par ',
             'published': 'Publié le: ',
             'likes': 'Likes: ',

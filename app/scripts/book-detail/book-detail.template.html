@@ -1,5 +1,5 @@
 <div class="row buffer-top">
-    <a class="col-xs-4 back-link" href="#!/books">
+    <a class="col-xs-12 col-sm-6 col-md-4 back-link" href="#!/books">
         <div>
             <span class="glyphicon glyphicon-arrow-left"></span>
             {{'detail.back'|translate}}
@@ -20,7 +20,7 @@
         <p>{{book.genre.category}},{{book.genre.name}}</p>
     </div>
 </div>
-<div class="row">
+<div class="row container">
     <h3>{{'detail.introduction'|translate}}</h3>
     <p class="text-justify" ng-repeat="content in book.introduction">{{content.content}}</p>
 </div>
