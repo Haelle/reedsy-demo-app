@@ -6,17 +6,14 @@
         <div class="caption col-xs-8 col-sm-12">
             <a href="#!books/{{$ctrl.book.id}}">
                 <h4>{{$ctrl.book.name}}</h4>
-            </a>
+            </a>g
             <div>{{ 'by' | translate }}{{$ctrl.book.author.name}}</div>
             <div class="book-likes">
                 <span class="glyphicon glyphicon-heart"></span>
                 {{$ctrl.book.likes}}
             </div>
             <span class="book-published-date">
-                {{ 'ago-start' | translate }}
-                {{ $ctrl.now | amDifference : $ctrl.book.published : 'months' }}
-                {{'months' | translate }}
-                {{'ago-end' | translate }}
+                {{$ctrl.book.published| amTimeAgo}}
             </span>
         </div>
     </div>

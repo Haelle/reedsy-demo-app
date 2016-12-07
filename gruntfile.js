@@ -78,6 +78,8 @@ module.exports = function(grunt) {
                     stdout: true
                 },
                 command: [
+                    "cp app/bower_components/bootstrap/fonts/* app/fonts/",
+                    "cp app/bower_components/components-font-awesome/fonts/* app/fonts/",
                     "find -type f -name '*.annotated.js' -delete",
                     'rm app/app.concat.js',
                     'rm app/app.concat.css'
